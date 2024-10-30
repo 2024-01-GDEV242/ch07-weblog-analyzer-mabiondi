@@ -244,7 +244,16 @@ public class LogAnalyzer
         return busyMonth;
     }
     
-    
+    /**
+     * Return the average number of accesses per month.
+     * 
+     * @return The average number of accesses per month.
+     */
+    public double averageAccessesPerMonth()
+    {
+        double average = (double) numberOfAccesses() / (yearCounts.length * 12);
+        return average;
+    }
     
     /**
      * Print the hourly counts.
