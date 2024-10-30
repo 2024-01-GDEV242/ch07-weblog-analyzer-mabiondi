@@ -9,6 +9,7 @@ public class LogAnalyzer
     // Where to calculate the hourly access counts.
     private int[] hourCounts;
     private int[] dayCounts;
+    private int[] monthCounts;
     // Use a LogfileReader to access the data.
     private LogfileReader reader;
     /**
@@ -59,6 +60,18 @@ public class LogAnalyzer
             LogEntry entry = reader.next();
             int day = entry.getDay();
             dayCounts[day]++;
+        }
+    }
+    
+    /**
+     * Analyze the daily access data from the log file.
+     */
+    public void analyzeMonthlyData()
+    {
+        while(reader.hasNext()) {
+            LogEntry entry = reader.next();
+            int month = entry.getMonth();
+            monthCounts[month]++;
         }
     }
     
@@ -161,6 +174,20 @@ public class LogAnalyzer
             }
         }
         return busyDay;
+    }
+    
+    /**
+     * Return an array of the number of accesses per month.
+     * 
+     * @return The day of month in which the page is accessed the least.
+     */
+    public int[] totalAccessesPerMonth()
+    {
+        int[] accessesPerMonth = new int[12];
+        for (int month = 0; month < 12; month++) {
+            
+        }
+        return quietDay;
     }
     
     /**
