@@ -12,6 +12,18 @@ public class LogAnalyzer
     private LogfileReader reader;
     /**
      * Create an object to analyze hourly web accesses.
+     */
+    public LogAnalyzer()
+    { 
+        // Create the array object to hold the hourly
+        // access counts.
+        hourCounts = new int[24];
+        // Create the reader to obtain the data.
+        reader = new LogfileReader("demo.log");
+    }
+    
+    /**
+     * Create an object to analyze hourly web accesses from a given file.
      * @param fileName The name of the log file to be analyzed.
      */
     public LogAnalyzer(String fileName)
