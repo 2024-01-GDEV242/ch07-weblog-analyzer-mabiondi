@@ -51,8 +51,6 @@ public class LogAnalyzer
     
     /**
     * Return the number of accesses recorded in the log file.
-    * 
-    * @return total The total number of times the web page is accessed.
     */
     public int numberOfAccesses()
     {
@@ -62,7 +60,22 @@ public class LogAnalyzer
         }
         return total;
     }
-
+    
+    /**
+     * Return the hour in which the page was accessed
+     * the greatest number of times.
+     */
+    public int busiestHour()
+    {
+        int busyHour = 0;
+        for (int hour = 0; hour < 24; hour++) {
+            if (hourCounts[busyHour] > hourCounts[hour]) {
+                busyHour = hour;
+            }
+        }
+        return busyHour;
+    }
+    
     /**
      * Print the hourly counts.
      * These should have been set with a prior
