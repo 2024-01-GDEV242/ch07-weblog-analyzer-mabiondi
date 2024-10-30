@@ -77,6 +77,21 @@ public class LogAnalyzer
     }
     
     /**
+     * Return the hour in which the page was accessed
+     * the lowest number of times.
+     */
+    public int quietestHour()
+    {
+        int quietHour = 0;
+        for (int hour = 0; hour < 24; hour++) {
+            if (hourCounts[quietHour] < hourCounts[hour]) {
+                quietHour = hour;
+            }
+        }
+        return quietHour;
+    }
+    
+    /**
      * Print the hourly counts.
      * These should have been set with a prior
      * call to analyzeHourlyData.
