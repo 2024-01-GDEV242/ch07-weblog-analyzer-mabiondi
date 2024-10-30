@@ -193,6 +193,40 @@ public class LogAnalyzer
     }
     
     /**
+     * Return the month on which the page was accessed
+     * the lowest number of times.
+     * 
+     * @return The month in which the page is accessed the least.
+     */
+    public int quietestMonth()
+    {
+        int quietMonth = 1;
+        for (int month = 0; month < 12; month++) {
+            if (monthCounts[quietMonth] < monthCounts[month]) {
+                quietMonth = month + 1;
+            }
+        }
+        return quietMonth;
+    }
+    
+    /**
+     * Return the month on which the page was accessed
+     * the greatest number of times.
+     * 
+     * @return The month in which the page is accessed the most.
+     */
+    public int busiestMonth()
+    {
+        int busyMonth = 1;
+        for (int month = 0; month < 12; month++) {
+            if (monthCounts[busyMonth] > monthCounts[month]) {
+                busyMonth = month + 1;
+            }
+        }
+        return busyMonth;
+    }
+    
+    /**
      * Print the hourly counts.
      * These should have been set with a prior
      * call to analyzeHourlyData.
