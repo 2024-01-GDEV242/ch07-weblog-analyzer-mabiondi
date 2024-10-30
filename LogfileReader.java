@@ -29,6 +29,7 @@ public class LogfileReader implements Iterator<LogEntry>
     // An iterator over entries.
     private Iterator<LogEntry> dataIterator;
     
+    private String fileName;
     /**
      * Create a LogfileReader to supply data from a default file.
      */
