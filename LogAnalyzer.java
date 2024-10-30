@@ -23,7 +23,8 @@ public class LogAnalyzer
     }
     
     /**
-     * Create an object to analyze hourly web accesses from a given file.
+     * Create an object to analyze hourly web accesses,
+     * given the name of a log file.
      * @param fileName The name of the log file to be analyzed.
      */
     public LogAnalyzer(String fileName)
