@@ -51,6 +51,8 @@ public class LogAnalyzer
     
     /**
     * Return the number of accesses recorded in the log file.
+    * 
+    * @return The total number of times the page has been accessed.
     */
     public int numberOfAccesses()
     {
@@ -64,6 +66,8 @@ public class LogAnalyzer
     /**
      * Return the hour in which the page was accessed
      * the greatest number of times.
+     * 
+     * @return The hour in which the page is accessed the most.
      */
     public int busiestHour()
     {
@@ -79,6 +83,8 @@ public class LogAnalyzer
     /**
      * Return the hour in which the page was accessed
      * the lowest number of times.
+     * 
+     * @return The hour in which the page is accessed the least.
      */
     public int quietestHour()
     {
