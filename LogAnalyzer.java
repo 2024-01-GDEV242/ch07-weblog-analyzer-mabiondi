@@ -20,6 +20,9 @@ public class LogAnalyzer
         // Create the array object to hold the hourly
         // access counts.
         hourCounts = new int[24];
+        
+        dayCounts = new int[28];
+        monthCounts = new int[12];
         // Create the reader to obtain the data.
         reader = new LogfileReader("demo.log");
     }
@@ -35,6 +38,9 @@ public class LogAnalyzer
         // Create the array object to hold the hourly
         // access counts.
         hourCounts = new int[24];
+        
+        dayCounts = new int[28];
+        monthCounts = new int[12];
         // Create the reader to obtain the data.
         reader = new LogfileReader(fileName);
     }
