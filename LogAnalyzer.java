@@ -12,6 +12,8 @@ public class LogAnalyzer
     private int[] dayCounts;
     // Where the monthly access counts are calculaetd
     private int[] monthCounts;
+    // Where the yearly access counts are calculaetd
+    private int[] yearCounts;
     // Use a LogfileReader to access the data.
     private LogfileReader reader;
     /**
@@ -25,6 +27,7 @@ public class LogAnalyzer
         
         dayCounts = new int[28];
         monthCounts = new int[12];
+        yearCounts = new int[7];
         // Create the reader to obtain the data.
         reader = new LogfileReader("demo.log");
     }
@@ -43,6 +46,7 @@ public class LogAnalyzer
         
         dayCounts = new int[28];
         monthCounts = new int[12];
+        yearCounts = new int[7];
         // Create the reader to obtain the data.
         reader = new LogfileReader(fileName);
     }
@@ -80,6 +84,18 @@ public class LogAnalyzer
             LogEntry entry = reader.next();
             int month = entry.getMonth();
             monthCounts[month - 1]++;
+        }
+    }
+    
+    /**
+     * Analyze the yearly access data from the log file.
+     */
+    public void analyzeAnnualData()
+    {
+        while(reader.hasNext()) {
+            LogEntry entry = reader.next();
+            int year = entry.getYear();
+            yearCounts[year - 2018]++;
         }
     }
     
@@ -227,6 +243,8 @@ public class LogAnalyzer
         }
         return busyMonth;
     }
+    
+    
     
     /**
      * Print the hourly counts.
