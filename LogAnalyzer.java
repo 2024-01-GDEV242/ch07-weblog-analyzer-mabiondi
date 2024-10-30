@@ -82,6 +82,25 @@ public class LogAnalyzer
     
     /**
      * Return the hour in which the page was accessed
+     * the greatest number of times.
+     * 
+     * @return The hour in which the page is accessed the most.
+     */
+    public int busiestTwoHour()
+    {
+        int firstHalf = 0;
+        for (int hour = 0; hour < 24; hour++) {
+            if (hourCounts[firstHalf] + hourCounts[(firstHalf + 1) % 24]
+            >
+            hourCounts[hour] + hourCounts[(hour + 1) % 24]) {
+                firstHalf = hour;
+            }
+        }
+        return firstHalf;
+    }
+    
+    /**
+     * Return the hour in which the page was accessed
      * the lowest number of times.
      * 
      * @return The hour in which the page is accessed the least.
