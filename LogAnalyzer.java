@@ -147,6 +147,23 @@ public class LogAnalyzer
     }
     
     /**
+     * Return the day on which the page was accessed
+     * the greatest number of times.
+     * 
+     * @return The day of month in which the page is accessed the most.
+     */
+    public int busiestDay()
+    {
+        int busyDay = 1;
+        for (int day = 1; day <= 28; day++) {
+            if (dayCounts[busyDay] > dayCounts[day]) {
+                busyDay = day;
+            }
+        }
+        return busyDay;
+    }
+    
+    /**
      * Print the hourly counts.
      * These should have been set with a prior
      * call to analyzeHourlyData.
