@@ -64,7 +64,7 @@ public class LogAnalyzer
     }
     
     /**
-     * Analyze the daily access data from the log file.
+     * Analyze the monthly access data from the log file.
      */
     public void analyzeMonthlyData()
     {
@@ -179,15 +179,11 @@ public class LogAnalyzer
     /**
      * Return an array of the number of accesses per month.
      * 
-     * @return The day of month in which the page is accessed the least.
+     * @return An array containing how often the page was accessed each month.
      */
     public int[] totalAccessesPerMonth()
     {
-        int[] accessesPerMonth = new int[12];
-        for (int month = 0; month < 12; month++) {
-            
-        }
-        return quietDay;
+        return monthCounts;
     }
     
     /**
