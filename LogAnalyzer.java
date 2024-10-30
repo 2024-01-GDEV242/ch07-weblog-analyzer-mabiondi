@@ -77,7 +77,7 @@ public class LogAnalyzer
         while(reader.hasNext()) {
             LogEntry entry = reader.next();
             int month = entry.getMonth();
-            monthCounts[month]++;
+            monthCounts[month - 1]++;
         }
     }
     
