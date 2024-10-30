@@ -8,7 +8,9 @@ public class LogAnalyzer
 {
     // Where to calculate the hourly access counts.
     private int[] hourCounts;
+    // Where the daily access counts are calculated
     private int[] dayCounts;
+    // Where the monthly access counts are calculaetd
     private int[] monthCounts;
     // Use a LogfileReader to access the data.
     private LogfileReader reader;
