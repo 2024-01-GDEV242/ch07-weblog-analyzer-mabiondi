@@ -130,6 +130,23 @@ public class LogAnalyzer
     }
     
     /**
+     * Return the day on which the page was accessed
+     * the lowest number of times.
+     * 
+     * @return The day of month in which the page is accessed the least.
+     */
+    public int quietestDay()
+    {
+        int quietDay = 1;
+        for (int day = 1; day <= 28; day++) {
+            if (dayCounts[quietDay] < dayCounts[day]) {
+                quietDay = day;
+            }
+        }
+        return quietDay;
+    }
+    
+    /**
      * Print the hourly counts.
      * These should have been set with a prior
      * call to analyzeHourlyData.
