@@ -48,6 +48,20 @@ public class LogAnalyzer
             hourCounts[hour]++;
         }
     }
+    
+    /**
+    * Return the number of accesses recorded in the log file.
+    * 
+    * @return total The total number of times the web page is accessed.
+    */
+    public int numberOfAccesses()
+    {
+        int total = 0;
+        for (int accesses : hourCounts) {
+            total += accesses;
+        }
+        return total;
+    }
 
     /**
      * Print the hourly counts.
